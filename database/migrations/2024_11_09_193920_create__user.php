@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('alamat');
             $table->string('password');
-            $table->boolean('is_admin');
-            $table->boolean('is_staff');
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_staff')->default(false);
             $table->timestamps();
         });
     }

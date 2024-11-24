@@ -10,7 +10,18 @@ class User extends Authenticatable
 {
     use HasFactory;
 
-    protected $table = 'users'; // Menyatakan tabel yang digunakan di model
+    protected $primaryKey = 'user_id';
+
+    protected $fillable = [
+        'name',
+        'phone',
+        'email',
+        'alamat',
+        'password',
+        'is_admin',
+        'is_staff',
+
+    ];
 
     public function reservations()
     {

@@ -54,7 +54,11 @@ Route::get('/order', [OrderController::class, 'order_controller'])->name('order'
 Route::get('/reservation_box', [ReservationBoxController::class, 'reservation_box_controller'])->name('reservation_box');
 
 //service
+//view data
 Route::get('/Service', [ServiceOwnerController::class, 'service_owner_controller'])->name('service_owner');
+//create data
+Route::get('/createservice', [ServiceOwnerController::class, 'create'])->name('createservice');
+Route::post('/createservice', [ServiceOwnerController::class, 'store'])->name('storeservice');
 
 //profil
 Route::get('/profil', [ProfilOwnerController::class, 'profil_controller'])->name('profil_owner');
@@ -66,8 +70,8 @@ Route::get('/staff', [StaffController::class, 'staff_controller'])->name('staff'
 Route::get('/createstaf', [StaffController::class, 'create'])->name('createstaff');
 Route::post('/createstaf', [StaffController::class, 'store'])->name('storestaff');
 //edit data
-Route::get('/editstaf/{staff}', [StaffController::class, 'edit'])->name('editstaff');
-Route::put('/updatestaff/{staff}', [StaffController::class, 'update'])->name('updatestaff');
+Route::get('/editstaf/{user}', [StaffController::class, 'edit'])->name('editstaff');
+Route::put('/updatestaff/{user}', [StaffController::class, 'update'])->name('updatestaff');
 //delete data
 Route::get('/deletestaff/{staff}', [StaffController::class, 'delete'])->name('deletestaff');
 
