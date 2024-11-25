@@ -59,6 +59,12 @@ Route::get('/Service', [ServiceOwnerController::class, 'service_owner_controller
 //create data
 Route::get('/createservice', [ServiceOwnerController::class, 'create'])->name('createservice');
 Route::post('/createservice', [ServiceOwnerController::class, 'store'])->name('storeservice');
+//edit data
+Route::get('/editservice/{service}', [ServiceOwnerController::class, 'edit'])->name('editservice');
+Route::put('/updateservice/{service}', [ServiceOwnerController::class, 'update'])->name('updateservice');
+//delete data
+Route::get('/deleteservice/{service}', [ServiceOwnerController::class, 'delete'])->name('deleteservice');
+
 
 //profil
 Route::get('/profil', [ProfilOwnerController::class, 'profil_controller'])->name('profil_owner');

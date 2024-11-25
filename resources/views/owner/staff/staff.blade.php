@@ -2,11 +2,11 @@
 @section('title', 'Staff - Salon Rama')
 @section('content')
         <div class="container">
-            <h1>Data Staff</h1>
-            <a href="{{ route('createstaff') }}" class="bg-green-400 hover:bg-green-600 px-5 py-0 rounded-xl">Tambah data</a>
+            <h1 class="font-bold text-5xl m-5">Data Staff</h1>
+            <a href="{{ route('createstaff') }}" class="bg-tertiary hover:bg-secondary px-5 py-0 rounded-md">Tambah data</a>
             <table class="table-auto w-full mb-6 border-collapse border border-black shadow-lg rounded-lg overflow-hidden">
                 <thead>
-                    <tr class="bg-orange-500 text-black">
+                    <tr class=" bg-secondary text-black">
                         <th class="p-3 border border-black">No</th>
                         <th class="p-3 border border-black">Nama</th>
                         <th class="p-3 border border-black">Contact</th>
