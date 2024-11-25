@@ -36,11 +36,16 @@ Route::get('/homepage', [HomepageController::class, 'homepage_controller'])->nam
 Route::get('/service', [ServiceController::class, 'service_controller'])->name('service');
 
 //contact
-Route::get('/contact', [ContactController::class, 'contact_controller'])->name('contact');
+// Route::get('/contact', [ContactController::class, 'contact_controller'])->name('contact');
+// Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
+Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
 
 
 //______________________________User setelah login
-Route::get('/reservasi', [ReservasiController::class, 'reservasi_controller'])->name('reservasi');
+Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
 
 
 //______________________________Owner
@@ -49,6 +54,10 @@ Route::get('/homepageowner', [HomepageOwnerController::class, 'homepage_controll
 
 //order
 Route::get('/order', [OrderController::class, 'order_controller'])->name('order');
+
+//reservation Controller
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation.index');
+Route::post('/reservation/store', [ReservationController::class, 'store'])->name('reservation.store');
 
 //reservation box
 Route::get('/reservation_box', [ReservationBoxController::class, 'reservation_box_controller'])->name('reservation_box');
