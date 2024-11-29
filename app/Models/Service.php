@@ -17,7 +17,8 @@ class Service extends Model
         'name',
         'price',
         'description',
-        'is_available'
+        'is_available',
+        'image'
     ];
 
     public function detail_reservation()

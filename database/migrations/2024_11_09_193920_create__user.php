@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('user_id');//relasi dengan reservation
             $table->string('name');
             $table->string('phone');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('alamat');
             $table->string('password');
             $table->boolean('is_admin')->default(false);

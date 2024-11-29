@@ -12,6 +12,7 @@
                 <th class="p-3 border border-black">Price</th>
                 <th class="p-3 border border-black">Description</th>
                 <th class="p-3 border border-black">Is Avaible</th>
+                <th class="p-3 border border-black">Gambar</th>
 
                 <th class="p-3 border border-black">Actions</th>
             </tr>
@@ -24,6 +25,13 @@
                 <td class="p-3 text-center border border-black">{{ $s->price }}</td>
                 <td class="p-3 text-center border border-black">{{ $s->description }}</td>
                 <td class="p-3 text-center border border-black">{{ $s->is_available == 1 ? 'Available' : 'Not Available' }}</td>
+                <td>
+                    @if ($s->image)
+                    <img src="{{ asset('storage/' . $s->image) }}" alt="Gambar {{ $s->name }}" class="w-16 h-16 object-cover">
+                    @else
+                        <span>Tidak ada gambar</span>
+                    @endif
+                </td>
                 <td class="p-3 text-center border border-black">
                     {{-- <button class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-700">Detail</button> --}}
                     <a href="{{ route('editservice', $s->service_id) }}" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-yellow-700">Edit</a>

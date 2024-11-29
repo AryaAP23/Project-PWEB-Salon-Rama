@@ -24,6 +24,11 @@
         </div>
 
         <div class="mb-4">
+            <label for="image" class="block text-sm font-medium text-gray-700">Gambar</label>
+            <input type="file" id="image" name="image" accept="image/*" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" value="{{$service->image}} required>
+        </div>
+
+        <div class="mb-4">
             <label for="is_available" class="block text-lg font-medium">Tersedia:</label>
             <select name="is_available" id="is_available" class="border rounded-lg w-full p-2" required>
                 <option value="1">Tersedia</option>

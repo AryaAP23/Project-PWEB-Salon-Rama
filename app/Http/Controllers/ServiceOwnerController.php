@@ -19,13 +19,39 @@ class ServiceOwnerController extends Controller
     }
 
     public function store(Request $request){
-        Service::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'description' => $request->description,
-            'is_available' => $request->is_available
-        ]);
-        return redirect()->route('service_owner');
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'price' => 'required|numeric',
+                'description' => 'nullable|string',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+    
+            // dd($request->all());
+    
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            dd($e->errors()); // Melihat error validasi
+        }
+
+        if ($request->hasFile('image')) {
+            // Simpan gambar ke folder public/storage/service_images
+            $imagePath = $request->file('image')->store('service_images', 'public');
+
+            // dd($imagePath);
+
+            Service::create([
+                'name' => $request->name,
+                'price' => $request->price,
+                'description' => $request->description,
+                'is_available' => $request->is_available,
+                'image' => $imagePath
+            ]);
+            return redirect()->route('service_owner');
+        }
+        else
+        {
+            return back()->with('error', 'Gambar tidak ditemukan atau tidak valid.');
+        }
     }
 
     public function edit(Service $service){

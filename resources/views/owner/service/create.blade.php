@@ -4,7 +4,7 @@
 <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg mt-10">
     <h2 class="text-2xl font-semibold mb-6 text-center">Tambah Layanan</h2>
     
-    <form action="{{ route('storeservice') }}" method="POST" class="space-y-4">
+    <form action="{{ route('storeservice') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
         @csrf
 
         <div class="mb-4">
@@ -20,6 +20,11 @@
         <div class="mb-4">
             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
             <textarea id="description" name="description" rows="3" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label for="image" class="block text-sm font-medium text-gray-700">Gambar</label>
+            <input type="file" id="image" name="image" accept="image/*" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
         </div>
 
         <div class="mb-4">
