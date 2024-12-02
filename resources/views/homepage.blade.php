@@ -134,7 +134,7 @@
     </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Footer Section --> 
   <footer class="bg-peach-100 py-10">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Salon Address -->
