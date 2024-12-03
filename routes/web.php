@@ -3,7 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controllertes;
+// use App\Http\Controllers\Controllertes;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\HomepageOwnerController;
@@ -14,7 +14,7 @@ use App\Http\Controllers\ReservationBoxController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceOwnerController;
 use App\Http\Controllers\StaffController;
-use App\Models\Staff;
+// use App\Models\Staff;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -86,5 +86,10 @@ Route::get('/deletestaff/{staff}', [StaffController::class, 'delete'])->name('de
 //______________________________Auth
 //Register
 Route::get('/register', [AuthController::class, 'register_controller'])->name('register');
-
+Route::post('/register', [AuthController::class, 'register'])->name('make_register');
+//Login
+Route::get('/login', [AuthController::class, 'login_form'])->name('loginform');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+//Logout
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 

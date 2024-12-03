@@ -23,11 +23,11 @@
         </nav>
         <h1 class="text-2xl font-bold">Logo Salon Rama</h1>
         <div class="flex space-x-4"> <!-- Menambahkan div untuk tombol Sign Up dan Sign In -->
-            <a href="#" class="text-white bg-blue-500 hover:bg-blue-700 transition-colors duration-300 p-2 rounded">Sign Up</a>
-            <a href="#" class="text-white bg-green-500 hover:bg-green-700 transition-all duration-300 p-2 rounded">Sign In</a>
+            <a href="{{ route('register') }}" class="text-white bg-blue-500 hover:bg-blue-700 transition-colors duration-300 p-2 rounded">Daftar</a>
+            <a href="{{ route('loginform') }}" class="text-white bg-green-500 hover:bg-green-700 transition-all duration-300 p-2 rounded">Masuk</a>
         </div>
     </header>
-    <main>
+    <main class=" bg-orange-500">
         @yield('content')
     </main>
 </body>
