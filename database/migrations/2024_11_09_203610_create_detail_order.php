@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('detail_order', function (Blueprint $table) {
             $table->id('detail_order_id');
-            $table->foreignId('order_id')->constrained('order', 'order_id')->onDelete('cascade');//relasi dengan order
+            $table->foreignId('order_id')->constrained('orders', 'order_id')->onDelete('cascade');//relasi dengan order
             $table->foreignId('service_id')->constrained('service', 'service_id')->onDelete('cascade');//relasi dengan service
             $table->timestamps();
         });

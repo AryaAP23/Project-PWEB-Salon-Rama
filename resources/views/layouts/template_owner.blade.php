@@ -15,9 +15,13 @@
         <a href="{{ route('homepage_owner') }}" class="w-full text-left py-2 px-4 mb-4 bg-gray-700 rounded hover:bg-gray-600">
             Homepage
         </a>
-        <a href="{{ route('order') }}" class="w-full text-left py-2 px-4 mb-4 bg-gray-700 rounded hover:bg-gray-600">
+        {{-- <a href="{{ route('order') }}" class="w-full text-left py-2 px-4 mb-4 bg-gray-700 rounded hover:bg-gray-600">
+            Order
+        </a> --}}
+        <a href="{{route('order')}}" class="w-full text-left py-2 px-4 mb-4 bg-gray-700 rounded hover:bg-gray-800">
             Order
         </a>
+        
         <a href="{{ route('reservation_box') }}" class="w-full text-left py-2 px-4 mb-4 bg-gray-700 rounded hover:bg-gray-600">
             Reservation Box
         </a>

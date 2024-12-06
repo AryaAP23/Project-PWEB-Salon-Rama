@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reservation', function (Blueprint $table) {
             $table->id('reservation_id');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->datetime('booking_date');
             $table->enum('status', [
                 'Unpaid',
@@ -22,11 +22,13 @@ return new class extends Migration
                 'Rejected',
                 'Canceled',
                 'Process'
-            ]);
+            ])->default("Validation");
             $table->double('total_cost');
-            $table->integer('service_id');
+            $table->string('image_path');
+
             $table->foreignId('user_id')->constrained('users', 'user_id')->onDelete('cascade');//relasi dengan user
             $table->foreignId('payment_id')->constrained('payments', 'payment_id')->onDelete('cascade');//relasi dengan payment
+            $table->foreignId('service_id')->constrained('service', 'service_id')->onDelete('cascade');//relasi dengan payment
             $table->timestamps();
         });
     }

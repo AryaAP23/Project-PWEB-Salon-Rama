@@ -6,11 +6,10 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    // Menampilkan Formulir
-    public function showForm()
+    public function contact_controller()
     {
         return view('contact'); // Pastikan file `resources/views/contact.blade.php` ada
-    }
+    } 
 
     // Memproses Formulir
     public function submit(Request $request)

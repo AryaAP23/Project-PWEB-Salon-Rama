@@ -9,7 +9,18 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    protected $table = 'reservations'; // Pastikan ini sesuai dengan nama tabel
+    protected $table = 'reservation'; // Pastikan ini sesuai dengan nama tabel
+
+    protected $fillable = [
+        'description',
+        'booking_date',
+        'status',
+        'total_cost',
+        'image_path',
+        'service_id',
+        'user_id',
+        'payment_id',
+    ];
 
     public function user()
     {
@@ -24,5 +35,10 @@ class Reservation extends Model
     public function detail_reservation()
     {
         return $this->hasMany(DetailReservation::class, 'detail_reservation_id', 'detail_reservation_id');
+    }
+    
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id', 'service_id');
     }
 }

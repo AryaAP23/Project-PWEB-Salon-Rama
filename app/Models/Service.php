@@ -29,4 +29,6 @@ class Service extends Model
     {
         return $this->hasMany(DetailOrder::class, 'detail_order_id', 'detail_order_id');
     }
+
+   
 }
